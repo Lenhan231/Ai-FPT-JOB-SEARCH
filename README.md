@@ -2,6 +2,12 @@
   <img src="claude_animation.gif" alt="Claude Job Search Assistant" width="200">
 </p>
 
+# FPT Job Search - AI Application Assistant
+
+**⚡ Quick Start (API):** [API.md](./API.md) - Production-ready REST API with Gemini AI
+
+---
+
 # AI Job Search
 
 An AI-powered job application framework built on [Claude Code](https://claude.com/claude-code). Fork it, fill in your profile, and let Claude evaluate job postings, tailor your CV, write cover letters, and prepare you for interviews.
