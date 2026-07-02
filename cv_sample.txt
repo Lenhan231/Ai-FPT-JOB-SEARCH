@@ -1,0 +1,45 @@
+{
+  "cv_content": "HỌ TÊN: NGUYỄN VĂN A
+VỊ TRÍ: Senior Fullstack Developer / Frontend Lead
+ĐỊA CHỈ: Quận 7, TP. Hồ Chí Minh, Việt Nam
+EMAIL: nguyenvana.dev@email.com
+SỐ ĐIỆN THOẠI: +84 90 1234 567
+LINKEDIN: linkedin.com/in/nguyenvana-dev
+
+TÓM TẮT NGHỀ NGHIỆP:
+Tôi là một Lập trình viên Fullstack với hơn 5 năm kinh nghiệm thực chiến trong việc thiết kế, xây dựng và vận hành các hệ thống web quy mô lớn. Thế mạnh của tôi là phát triển giao diện người dùng mượt mà với React/Next.js cùng hệ thống backend mạnh mẽ, bảo mật sử dụng Node.js (NestJS) và Python. Có kinh nghiệm triển khai CI/CD, làm việc với Cloud (AWS, Docker) và quản trị cơ sở dữ liệu lớn. Từng dẫn dắt đội ngũ 5 thành viên hoàn thành xuất sắc nhiều dự án quan trọng.
+
+KỸ NĂNG KỸ THUẬT:
+- Frontend: JavaScript (ES6+), TypeScript, React, React Native, Next.js, Redux Toolkit, HTML5, CSS3, Tailwind CSS, Sass, Webpack, Vite.
+- Backend: Node.js, Express, NestJS, Python (FastAPI, Django), RESTful API, GraphQL.
+- Database: PostgreSQL, MySQL, MongoDB, Redis, SQL Server.
+- Cloud & DevOps: AWS (S3, EC2, RDS, Lambda), Docker, GitHub Actions, GitLab CI/CD, Nginx.
+- Công cụ & Quy trình: Git, Jira, Scrum/Agile, Figma (sử dụng để thiết kế UI/UX cơ bản).
+
+KINH NGHIỆM LÀM VIỆC:
+
+1. Công ty Cổ phần Công nghệ XYZ - TP. HCM (Tháng 06/2023 - Hiện tại)
+   Chức danh: Senior Frontend Developer / Team Lead (Đội ngũ 5 lập trình viên)
+   - Xây dựng lại hệ thống Dashboard quản lý nội bộ và cổng thanh toán thương mại điện tử bằng Next.js và Tailwind CSS, giúp tăng tốc độ tải trang 40% và điểm Core Web Vitals lên mức xuất sắc (>90).
+   - Thiết kế hệ thống Micro-frontend sử dụng Module Federation giúp 3 đội phát triển độc lập cùng tích hợp mã nguồn nhanh chóng, giảm thiểu xung đột code 70%.
+   - Dẫn dắt, phân chia task và review code hàng tuần cho các thành viên trong nhóm theo quy trình Agile/Scrum.
+   - Phối hợp với team DevOps tối ưu quy trình CI/CD qua GitHub Actions giúp tự động kiểm thử và deploy lên AWS ECS chỉ trong 5 phút.
+
+2. Công ty Giải pháp Phần mềm ABC - TP. HCM (Tháng 09/2021 - Tháng 05/2023)
+   Chức danh: Fullstack Web Developer
+   - Phát triển hệ thống quản lý học tập trực tuyến (LMS) phục vụ hơn 50,000 học viên hoạt động hàng tháng.
+   - Xây dựng RESTful API backend bằng NestJS (TypeScript) kết hợp PostgreSQL và Redis cache giúp hệ thống chịu tải tốt vào khung giờ cao điểm (giảm tải DB 60%).
+   - Tối ưu hóa truy vấn SQL phức tạp và lập chỉ mục (indexing) giúp giảm thời gian phản hồi API trung bình từ 450ms xuống 120ms.
+   - Viết unit test & integration test bằng Jest đạt độ bao phủ (coverage) trên 80% toàn dự án.
+
+HỌC VẤN:
+- Cử nhân Công nghệ Thông tin - Trường Đại học Bách Khoa TP. HCM (2017 - 2021)
+  - Điểm trung bình tích lũy (GPA): 3.2/4.0
+  - Đồ án tốt nghiệp đạt điểm tối đa: "Xây dựng hệ thống phân tích dữ liệu ứng tuyển thông minh bằng học máy".
+
+CHỨNG CHỈ & GIẢI THƯỞNG:
+- AWS Certified Solutions Architect – Associate (2024)
+- Chứng chỉ tiếng Anh: IELTS 7.0 (giao tiếp và làm việc tốt với tài liệu kỹ thuật tiếng Anh)
+- Giải nhì cuộc thi Hackathon công nghệ do TP. HCM tổ chức năm 2020.
+"
+}

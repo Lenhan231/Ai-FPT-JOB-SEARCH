@@ -1,5 +1,10 @@
 // @ts-ignore
 import swaggerJsdoc from "swagger-jsdoc";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const options = {
   definition: {
@@ -16,12 +21,16 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:3000",
-        description: "Development server",
+        url: "/",
+        description: "Current environment (Auto-detected)",
       },
       {
-        url: "https://your-vercel-domain.vercel.app",
-        description: "Production server (Vercel)",
+        url: "https://ai-job-search-pink.vercel.app",
+        description: "Production server",
+      },
+      {
+        url: "http://localhost:3000",
+        description: "Local development",
       },
     ],
     components: {
@@ -35,6 +44,20 @@ const options = {
               description: "Full CV text content",
               example:
                 "Tôi là Software Engineer với 5 năm kinh nghiệm. Skills: Python, React, AWS, SQL. Vị trí hiện tại: Ho Chi Minh City",
+            },
+            source: {
+              type: "string",
+              enum: ["fpt", "linkedin"],
+              default: "linkedin",
+              description: "Job search database source",
+            },
+            query: {
+              type: "string",
+              description: "Keyword search query (defaults to parsed role from CV)",
+            },
+            location: {
+              type: "string",
+              description: "Location to search (defaults to parsed location from CV)",
             },
           },
         },
@@ -161,10 +184,142 @@ const options = {
             },
           },
         },
+        RawJob: {
+          type: "object",
+          properties: {
+            job_id: {
+              type: "string",
+              example: "FPT-001",
+            },
+            title: {
+              type: "string",
+              example: "Senior Backend Developer",
+            },
+            location: {
+              type: "string",
+              example: "Ho Chi Minh City",
+            },
+            company: {
+              type: "string",
+              example: "FPT Software",
+            },
+            job_url: {
+              type: "string",
+              example: "https://careers.fpt.com/job/001",
+            },
+            salary_range: {
+              type: "string",
+              example: "15-25 triệu",
+            },
+            deadline: {
+              type: "string",
+              example: "2026-08-31",
+            },
+            job_description: {
+              type: "string",
+              description: "Full job description",
+            },
+          },
+        },
+        RecommendRequest: {
+          type: "object",
+          required: ["cv_content"],
+          properties: {
+            cv_content: {
+              type: "string",
+              description: "Full CV text content",
+              example:
+                "Tôi là Software Engineer với 5 năm kinh nghiệm. Skills: Python, React, AWS, SQL. Vị trí hiện tại: Ho Chi Minh City",
+            },
+            source: {
+              type: "string",
+              enum: ["fpt", "linkedin"],
+              default: "linkedin",
+              description: "Job search database source",
+            },
+            query: {
+              type: "string",
+              description: "Keyword search query (defaults to parsed role from CV)",
+            },
+            location: {
+              type: "string",
+              description: "Location to search (defaults to parsed location from CV)",
+            },
+          },
+        },
+        RecommendResponse: {
+          type: "object",
+          properties: {
+            cv_analysis: {
+              $ref: "#/components/schemas/CVAnalysis",
+            },
+            jobs: {
+              type: "array",
+              items: {
+                $ref: "#/components/schemas/RawJob",
+              },
+            },
+          },
+        },
+        AnalyzeJobRequest: {
+          type: "object",
+          required: ["cv_analysis", "job"],
+          properties: {
+            cv_analysis: {
+              $ref: "#/components/schemas/CVAnalysis",
+            },
+            job: {
+              $ref: "#/components/schemas/RawJob",
+            },
+          },
+        },
+        AnalyzeJobResponse: {
+          type: "object",
+          properties: {
+            fit_score: {
+              type: "number",
+              minimum: 0,
+              maximum: 1,
+              example: 0.92,
+            },
+            matching_skills: {
+              type: "array",
+              items: { type: "string" },
+              example: ["Python", "AWS"],
+            },
+            missing_skills: {
+              type: "array",
+              items: { type: "string" },
+              example: ["Kubernetes"],
+            },
+            why_good_fit: {
+              type: "string",
+              example: "Bạn có kinh nghiệm backend mạnh và kỹ năng AWS phù hợp với yêu cầu",
+            },
+            cover_letter: {
+              type: "string",
+              description: "AI-generated cover letter in Vietnamese",
+            },
+            interview_tips: {
+              type: "array",
+              items: { type: "string" },
+              example: [
+                "Chuẩn bị câu trả lời về kinh nghiệm AWS",
+                "Tìm hiểu về các dự án recent của FPT",
+              ],
+            },
+          },
+        },
       },
     },
   },
-  apis: ["./api/routes/*.ts"],
+  apis: [
+    path.join(__dirname, "routes", "*.ts"),
+    path.join(__dirname, "routes", "*.js"),
+    "./api/routes/*.ts",
+    "./api/routes/*.js",
+    "./dist/api/routes/*.js"
+  ],
 };
 
 export const swaggerSpec = swaggerJsdoc(options);
